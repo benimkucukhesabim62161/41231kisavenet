@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eğitim Platformu</title>
+    <title>10/E</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: black;
             color: white;
+            margin: 0;
+            padding: 0;
             text-align: center;
         }
         .button {
@@ -21,6 +23,7 @@
             font-size: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px #0f0;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
         .button:hover {
             background-color: #fff;
@@ -39,6 +42,7 @@
             border: none;
             border-radius: 10px;
             box-shadow: 0 0 10px #f00;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
         .back-button:hover {
             background-color: white;
@@ -51,6 +55,38 @@
             background-color: #333;
             border-radius: 10px;
             box-shadow: 0 0 10px #0f0;
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0f0;
+        }
+
+        /* Mobil Cihazlar İçin Özelleştirme */
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 16px;
+            }
+            .button {
+                padding: 10px 20px;
+                margin: 10px;
+                font-size: 18px;
+            }
+            .back-button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            #odev-content {
+                padding: 15px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -98,7 +134,7 @@
     <!-- Ders Programı Bölümü -->
     <div id="dersProgrami" class="section">
         <h2>Ders Programı</h2>
-        <img src="https://raw.githubusercontent.com/benimkucukhesabim62161/12512941294912491294/refs/heads/main/dersprogrami.png" alt="Ders Programı" style="width:100%; max-width:600px;">
+        <img src="https://raw.githubusercontent.com/benimkucukhesabim62161/12512941294912491294/refs/heads/main/dersprogrami.png" alt="Ders Programı">
         <button class="back-button" onclick="goBack()">Geri Dön</button>
     </div>
 
