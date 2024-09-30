@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eğitim Platformu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        .button {
+            background-color: #0f0;
+            color: black;
+            padding: 15px 30px;
+            margin: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0f0;
+        }
+        .button:hover {
+            background-color: #fff;
+            box-shadow: 0 0 20px #0f0;
+        }
+        .section {
+            display: none;
+        }
+        .back-button {
+            margin-top: 20px;
+            background-color: #f00;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #f00;
+        }
+        .back-button:hover {
+            background-color: white;
+            color: black;
+        }
+        #odev-content {
+            white-space: pre-wrap;
+            text-align: left;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ana Menü -->
+    <div id="main-menu">
+        <button class="button" onclick="showSection('odevler')">Ödevler</button>
+        <button class="button" onclick="showSection('cevapAnahtari')">Cevap Anahtarı</button>
+        <button class="button" onclick="showSection('dersProgrami')">Ders Programı</button>
+    </div>
+
+    <!-- Ödevler Bölümü -->
+    <div id="odevler" class="section">
+        <h2>Ödevler</h2>
+        <div id="odev-content">Yükleniyor...</div>
+        <button class="back-button" onclick="goBack()">Geri Dön</button>
+    </div>
+
+    <!-- Cevap Anahtarı Bölümü -->
+    <div id="cevapAnahtari" class="section">
+        <h2>Cevap Anahtarı</h2>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-matematik-ders-kitabi-cevaplari-hecce-yayinlari/'">Matematik</button>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-turk-dili-ve-edebiyati-ders-kitabi-cevaplari-besgen-yayinlari/'">Türkçe</button>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-tarih-ders-kitabi-cevaplari-ata-yayincilik/'">Tarih</button>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-cografya-ders-kitabi-cevaplari-tutku-yayinlari/'">Coğrafya</button>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-felsefe-ders-kitabi-cevaplari-bilim-ve-kultur-yayinlari/'">Felsefe</button>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-biyoloji-ders-kitabi-cevaplari-dortel-yayinlari/'">Biyoloji</button>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-fizik-ders-kitabi-cevaplari-ekoyay-yayinlari/'">Fizik</button>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-kimya-ders-kitabi-cevaplari-ata-yayinlari/'">Kimya</button>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-bilim-ve-kultur-yayinlari-din-kulturu-ders-kitabi-cevaplari/'">Din Kültürü</button>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-peygamberimizin-hayati-ders-kitabi-cevaplari-ata-yayincilik/'">Peygamberimizin Hayatı</button>
+        <button class="button" onclick="showSection('ingilizce')">İngilizce</button>
+        <button class="back-button" onclick="goBack()">Geri Dön</button>
+    </div>
+
+    <!-- İngilizce Bölümü -->
+    <div id="ingilizce" class="section">
+        <h2>İngilizce</h2>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-ingilizce-ders-kitabi-cevaplari-pasifik-yayinlari/'">İngilizce Ders Kitabı</button>
+        <button class="button" onclick="window.location.href='https://www.evvelcevap.com/10-sinif-ingilizce-calisma-kitabi-cevaplari-pasifik-yayinlari/'">İngilizce Çalışma Kitabı</button>
+        <button class="back-button" onclick="showSection('cevapAnahtari')">Geri Dön</button>
+    </div>
+
+    <!-- Ders Programı Bölümü -->
+    <div id="dersProgrami" class="section">
+        <h2>Ders Programı</h2>
+        <img src="https://raw.githubusercontent.com/benimkucukhesabim62161/12512941294912491294/refs/heads/main/dersprogrami.png" alt="Ders Programı" style="width:100%; max-width:600px;">
+        <button class="back-button" onclick="goBack()">Geri Dön</button>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+            document.getElementById('main-menu').style.display = 'none';
+
+            if (sectionId === 'odevler') {
+                fetchOdevler();
+            }
+        }
+
+        function goBack() {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById('main-menu').style.display = 'block';
+        }
+
+        function fetchOdevler() {
+            const odevContent = document.getElementById('odev-content');
+            fetch('https://raw.githubusercontent.com/benimkucukhesabim62161/12512941294912491294/refs/heads/main/odevler.txt')
+                .then(response => response.text())
+                .then(data => {
+                    odevContent.textContent = data;
+                })
+                .catch(error => {
+                    odevContent.textContent = 'Ödevler yüklenemedi.';
+                    console.error('Error fetching Ödevler:', error);
+                });
+        }
+    </script>
+</body>
+</html>
