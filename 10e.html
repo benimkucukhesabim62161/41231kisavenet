@@ -13,6 +13,11 @@
             padding: 0;
             text-align: center;
             overflow-x: hidden;
+            height: 100vh; /* Tüm görünüm yüksekliği */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Dikey olarak ortala */
+            align-items: center; /* Yatay olarak ortala */
         }
         h2 {
             color: #ff3333; /* Kırmızı başlık rengi */
@@ -41,6 +46,7 @@
             display: none;
             padding: 20px;
             animation: fadeIn 0.5s ease-in-out forwards;
+            max-width: 90%; /* Genişlik ayarı */
         }
         .back-button {
             margin-top: 20px;
@@ -66,8 +72,7 @@
             color: #f0f0f0;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 51, 51, 0.8); /* Kırmızı gölge */
-            max-width: 90%;
-            margin: 0 auto;
+            margin: 20px auto; /* Ortala */
             word-wrap: break-word;
         }
         img {
