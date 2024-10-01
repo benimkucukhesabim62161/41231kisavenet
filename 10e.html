@@ -86,13 +86,6 @@
             }
         }
         @media only screen and (max-width: 600px) {
-            #main-menu {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh; /* Yüksekliği ekranın tamamı yap */
-            }
             body {
                 font-size: 16px;
             }
@@ -189,7 +182,7 @@
                 section.style.display = 'none';
             });
             document.getElementById('main-menu').style.display = 'block';
-            document.getElementById('main-menu').scrollIntoView({ behavior: 'smooth' }); // Sadece mobilde kaydır
+            document.getElementById('main-menu').scrollIntoView({ behavior: 'smooth' });
         }
 
         function goBackToCevapAnahtari() {
